@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:models="clr-namespace:WebView2Debugging.ViewModels"
+                    xmlns:lc="clr-namespace:WebView2Debugging"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DataTemplate DataType="{x:Type models:MainVM}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button
+                Grid.Row="0"
+                Grid.Column="0"
+                Content="Show WebView"
+                Command="{Binding ShowWebView}"
+                />
+            <Button
+                Grid.Row="0"
+                Grid.Column="1"
+                Content="Show something else"
+                Command="{Binding ShowSomethingElse}"
+                />
+            <ContentControl
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Content="{Binding CurrentViewModel}" />
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>
